@@ -119,10 +119,12 @@ fun ReminderItemCard(item: FoodItem, onDeleteClick: () -> Unit) {
     val daysLeft = TimeUnit.MILLISECONDS.toDays(item.expiryDate - currentTime)
 
     val (statusText, bgColor, textColor) = when {
-        daysLeft < 0 -> Triple("Sudah Kadaluarsa", Color(0xFFFFCDD2), Color(0xFFD32F2F))       // Merah muda + teks merah
-        daysLeft in 0..2 -> Triple("Kadaluarsa dalam ${daysLeft + 1} hari", Color(0xFFFFF9C4), Color(0xFFF57C00)) // Kuning pastel + teks oranye
-        else -> Triple("Lebih dari 7 hari lagi", Color(0xFFC8E6C9), Color(0xFF388E3C))         // Hijau pastel + teks hijau
+        daysLeft < 0 -> Triple("Sudah Kadaluarsa", Color(0xFFFFCDD2), Color(0xFFD32F2F)) // merah muda
+        daysLeft == 0L -> Triple("Kadaluarsa hari ini", Color(0xFFFFCDD2), Color(0xFFD32F2F)) // merah muda
+        daysLeft in 1..2 -> Triple("Kadaluarsa dalam ${daysLeft} hari", Color(0xFFFFF9C4), Color(0xFFF57C00)) // kuning pastel
+        else -> Triple("Lebih dari 2 hari lagi", Color(0xFFC8E6C9), Color(0xFF388E3C)) // hijau pastel
     }
+
 
     val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
     val expiryDateText = dateFormat.format(Date(item.expiryDate))
