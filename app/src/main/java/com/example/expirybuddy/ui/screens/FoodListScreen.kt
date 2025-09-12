@@ -70,7 +70,7 @@ fun FoodListScreen() {
                         tint = Color.White
                     )
                 },
-                text = { Text("Tambah Makanan", color = Color.White) },
+                text = { Text("ADD FOOD", color = Color.White) },
                 onClick = { showAddDialog = true },
                 containerColor = Color(0xFF4CAF50),  // Warna hijau
                 contentColor = Color.White

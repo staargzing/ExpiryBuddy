@@ -84,7 +84,7 @@ fun HomeScreen() {
 
             if (searchQuery.isNotBlank()) {
                 Text(
-                    text = "Hasil pencarian:",
+                    text = "Search Result :",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(horizontal = 16.dp)
@@ -92,7 +92,7 @@ fun HomeScreen() {
 
                 if (filteredItems.isEmpty()) {
                     Text(
-                        "Tidak ditemukan.",
+                        "Item not found.",
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
                     )
                 } else {
@@ -110,7 +110,7 @@ fun HomeScreen() {
 
                 if (reminderItems.isEmpty()) {
                     Text(
-                        text = "Tidak ada yang kadaluarsa besok.",
+                        text = "There are no items expiring tomorrow.",
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
                     )
                 } else {
