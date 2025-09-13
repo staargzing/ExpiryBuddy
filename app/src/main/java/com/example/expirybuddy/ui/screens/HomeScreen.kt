@@ -59,10 +59,7 @@ fun HomeScreen() {
     }
 
     Scaffold(
-        bottomBar = {
-            // Placeholder untuk bottom navigation jika diperlukan
-            // Bisa kamu tambah sesuai kebutuhan
-        }
+
     ) { paddingValues ->
         Column(
             modifier = Modifier
